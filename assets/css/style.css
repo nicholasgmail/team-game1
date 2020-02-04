@@ -1,0 +1,10 @@
+/**
+* Бандл сss стили для игры
+**/
+
+/*Базовые стили*/
+@import "components/settings.css";
+/*Утилиты для игры*/
+@import "components/utilite.css";
+/*глобальные стили*/
+@import "components/global__style.css";

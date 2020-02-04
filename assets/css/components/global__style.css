@@ -1,0 +1,495 @@
+/**
+* Базовые стили игры
+*
+**/
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol,
+ul,
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    margin-bottom: 0;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin-bottom: .5rem;
+    margin-left: 0;
+}
+
+blockquote {
+    margin: 0 0 1rem;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+sup {
+    top: -.5em;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+a:not([href]) {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+button {
+    border-radius: 0;
+}
+
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+input,
+button,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button {
+    text-transform: none;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+h1, .h1 {
+    font-size: 2.5rem;
+}
+
+h2, .h2 {
+    font-size: 2rem;
+}
+
+h3, .h3 {
+    font-size: 1.75rem;
+}
+
+h4, .h4 {
+    font-size: 1.5rem;
+}
+
+h5, .h5 {
+    font-size: 1.25rem;
+}
+
+h6, .h6 {
+    font-size: 1rem;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+.close:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+    opacity: .75;
+}
+
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+/*стили текста*/
+.text-monospace {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace ;
+}
+
+.text-justify {
+    text-align: justify ;
+}
+
+.text-wrap {
+    white-space: normal ;
+}
+
+.text-nowrap {
+    white-space: nowrap ;
+}
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-left {
+    text-align: left ;
+}
+
+.text-right {
+    text-align: right ;
+}
+
+.text-center {
+    text-align: center ;
+}
+.text-lowercase {
+    text-transform: lowercase ;
+}
+
+.text-uppercase {
+    text-transform: uppercase ;
+}
+
+.text-capitalize {
+    text-transform: capitalize ;
+}
+.text-white {
+    color: var(--white) ;
+}
+
+.text-primary {
+    color: var(--primary) ;
+}
+a.text-primary:hover, a.text-primary:focus {
+    color: #0056b3 ;
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+a.text-secondary:hover, a.text-secondary:focus {
+    color: #494f54 ;
+}
+
+.text-success {
+    color: var(--success) ;
+}
+
+a.text-success:hover, a.text-success:focus {
+    color: #19692c ;
+}
+
+.text-info {
+    color: var(--info) ;
+}
+
+a.text-info:hover, a.text-info:focus {
+    color: #0f6674 ;
+}
+
+.text-warning {
+    color: var(--warning) ;
+}
+
+a.text-warning:hover, a.text-warning:focus {
+    color: #ba8b00 ;
+}
+
+.text-danger {
+    color: var(--danger) ;
+}
+
+a.text-danger:hover, a.text-danger:focus {
+    color: #a71d2a ;
+}
+
+.text-light {
+    color: #f8f9fa ;
+}
+
+a.text-light:hover, a.text-light:focus {
+    color: #cbd3da ;
+}
+
+.text-dark {
+    color: var(--dark) ;
+}
+
+a.text-dark:hover, a.text-dark:focus {
+    color: #121416 ;
+}
+
+.text-body {
+    color: #212529 ;
+}
+
+.text-muted {
+    color: var(--gray) ;
+}
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.text-decoration-none {
+    text-decoration: none ;
+}
+
+.text-break {
+    word-break: break-word ;
+    overflow-wrap: break-word ;
+}
+
+.text-reset {
+    color: inherit ;
+}
+
+.visible {
+    visibility: visible ;
+}
+
+.invisible {
+    visibility: hidden ;
+}
+
+.border {
+    border: 1px solid #dee2e6 ;
+}
+
+.border-top {
+    border-top: 1px solid #dee2e6 ;
+}
+
+.border-right {
+    border-right: 1px solid #dee2e6 ;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6 ;
+}
+
+.border-left {
+    border-left: 1px solid #dee2e6 ;
+}
+
+.border-0 {
+    border: 0 ;
+}
+
+.border-top-0 {
+    border-top: 0 ;
+}
+
+.border-right-0 {
+    border-right: 0 ;
+}
+
+.border-bottom-0 {
+    border-bottom: 0 ;
+}
+
+.border-left-0 {
+    border-left: 0 ;
+}
+
+.border-primary {
+    border-color: var(--primary) ;
+}
+
+.border-secondary {
+    border-color: var(--secondary) ;
+}
+
+.border-success {
+    border-color: var(--success) ;
+}
+
+.border-info {
+    border-color: var(--info) ;
+}
+
+.border-warning {
+    border-color: var(--warning) ;
+}
+
+.border-danger {
+    border-color: var(--danger) ;
+}
+
+.border-light {
+    border-color: var(--light) ;
+}
+
+.border-dark {
+    border-color: #343a40 ;
+}
+
+.border-white {
+    border-color: #fff ;
+}
+
+.rounded-sm {
+    border-radius: 0.2rem ;
+}
+
+.rounded {
+    border-radius: 0.25rem ;
+}
+
+.rounded-top {
+    border-top-left-radius: 0.25rem ;
+    border-top-right-radius: 0.25rem ;
+}
+
+.rounded-right {
+    border-top-right-radius: 0.25rem ;
+    border-bottom-right-radius: 0.25rem ;
+}
+
+.rounded-bottom {
+    border-bottom-right-radius: 0.25rem ;
+    border-bottom-left-radius: 0.25rem ;
+}
+
+.rounded-left {
+    border-top-left-radius: 0.25rem ;
+    border-bottom-left-radius: 0.25rem ;
+}
+
+.rounded-lg {
+    border-radius: 0.3rem ;
+}
+
+.rounded-circle {
+    border-radius: 50% ;
+}
+
+.rounded-pill {
+    border-radius: 50rem ;
+}
+
+.rounded-0 {
+    border-radius: 0 ;
+}
