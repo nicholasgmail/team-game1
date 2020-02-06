@@ -7,7 +7,7 @@ var $cvs, $ctx, $box, $arock, $chest, $tree, $resourse, $d,
     //создание ресурсов камень, дерева, cундук
     $rock, $tree, $chest,
     //переменные кнопок
-    $btnModal, $btnCottage, $btnStonemill, $btnWoodCutter, $btnCastle,
+    $btnModal, $btnCottage, $btnStonemill, $btnWoodCutter, $btnCastle, $startBtn,
     //проверяем можно строить или нет значение boolean
     $isCotteg, $isStonemill, $isWoodСutter, $isCastle;
 
@@ -45,3 +45,37 @@ var $rockCount = 0,
 
 // масив списка для вывода информацыи, итоги игры
 var $liRock, $liTree, $liGold;
+
+//получаем кнопку для постройки хижины
+$btnCottage = document.querySelector("#btnCottage");
+//получаем кнопку для постройки каменеломни
+$btnStonemill = document.querySelector("#btnStonemill");
+//получаем кнопку для постройки лесопилки
+$btnWoodCutter = document.querySelector("#btnWoodCutter");
+//получаем кнопку для постройки замка
+$btnCastle = document.querySelector("#btnCastle");
+
+//разрешаем или нет постройку зданий
+$isCotteg = false;
+$isStonemill = false;
+$isWoodСutter = false;
+$isCastle = false;
+
+//получаем кнопку старт
+$startBtn = document.querySelector('#start__game');
+
+// Звуки
+$chestSound.src = "./assets/audio/gold.mp3";
+$treeSound.src = "./assets/audio/tree.mp3";
+$rockSound.src = "./assets/audio/rock.mp3";
+
+//получаем источник изображения
+$background.src = "./assets/img/bgCanvas.jpg";
+$cottage.src = "./assets/img/cottage_182_167.png";
+$wood_cutter.src = "./assets/img/wood_cutter_192_178.png";
+$stonemill.src = "./assets/img/stonemill_257_180.png";
+$castle.src = "./assets/img/castle_479_490.png";
+$rockImg.src = "./assets/img/resources/a-rock-1.png";
+$chestImg.src = "./assets/img/resources/chest-1.png";
+$treeImg.src = "./assets/img/resources/tree-2.png";
+$playerImg.src = "./assets/img/player.png";
