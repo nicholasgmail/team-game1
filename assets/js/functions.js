@@ -156,20 +156,32 @@ function houseCottage() {
     let rock = 5;
     let gold = 10;
     let tree = 7;
-
-    if ($rockCount > rock && $goldCount > gold && $treeCount > tree)
-// Создаем хижину при клике на кнопку построить
+    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree) {
+        $btnCottage.style.pointerEvents = "auto";
+        $btnCottage.style.background = "#28a745";
+        // Создаем хижину при клике на кнопку построить
         $btnCottage.onclick = function () {
             // Удаляем кнопку построить
-            $btnCottage.style.pointerEvents = "none";
+            $btnCottage.style.backgroundColor = "#dc3545";
+            $btnCottage.style.pointerEvents = "";
+            //разрешайе постройку
             $isCotteg = true;
+            //отнимаем ресурсы
             $rockCount -= rock;
             $goldCount -= gold;
             $treeCount -= tree;
+            //выводим значения
             rockCount($rockCount);
             treeCount($treeCount);
             goldCount($goldCount);
+            //очищаем счечик
+            clearInterval(gameCoreFunction());
         }
+    }else{
+        //блокируем кнопку
+        $btnCottage.style.backgroundColor = "#dc3545";
+        $btnCottage.style.pointerEvents = "none";
+    }
 }
 
 //событие на кнопке построить stonemill
@@ -178,20 +190,31 @@ function houseStonemill() {
     let gold = 12;
     let tree = 9;
 
-    if ($rockCount > rock && $goldCount > gold && $treeCount > tree)
-// Создаем хижину при клике на кнопку построить
+    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree) {
+        $btnStonemill.style.pointerEvents = "auto";
+        $btnStonemill.style.backgroundColor = "#28a745";
+        // Создаем хижину при клике на кнопку построить
         $btnStonemill.onclick = function () {
             // Удаляем кнопку построить
-            $btnStonemill.style.pointerEvents = "none";
+            $btnStonemill.style.backgroundColor = "#dc3545";
+            $btnStonemill.style.pointerEvents = "";
+            //разрешайе постройку
             $isStonemill = true;
+            //отнимаем ресурсы
             $rockCount -= rock;
             $goldCount -= gold;
             $treeCount -= tree;
+            //выводим значения
             rockCount($rockCount);
             treeCount($treeCount);
             goldCount($goldCount);
+            //очищаем счечик
             clearInterval(gameCoreFunction());
         }
+    }else{
+        $btnStonemill.style.backgroundColor = "#dc3545";
+        $btnStonemill.style.pointerEvents = "none";
+    }
 }
 
 //событие на кнопке построить Wood Сutter
@@ -200,19 +223,32 @@ function houseWoodСutter() {
     let gold = 9;
     let tree = 15;
 
-    if ($rockCount > rock && $goldCount > gold && $treeCount > tree)
-// Создаем хижину при клике на кнопку построить
+    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree) {
+        $btnWoodCutter.style.pointerEvents = "auto";
+        $btnWoodCutter.style.backgroundColor = "#28a745";
+        // Создаем хижину при клике на кнопку построить
         $btnWoodCutter.onclick = function () {
             // Удаляем кнопку построить
-            $btnWoodCutter.style.pointerEvents = "none";
+            $btnWoodCutter.style.pointerEvents = "";
+            $btnWoodCutter.style.backgroundColor = "#dc3545";
+            //разрешайе постройку
             $isWoodСutter = true;
+            //отнимаем ресурсы
             $rockCount -= rock;
             $goldCount -= gold;
             $treeCount -= tree;
+            //выводим значения
             rockCount($rockCount);
             treeCount($treeCount);
             goldCount($goldCount);
+            //очищаем счечик
+            clearInterval(gameCoreFunction());
         }
+    }else{
+        //блокируем кнопку
+        $btnWoodCutter.style.backgroundColor = "#dc3545";
+        $btnWoodCutter.style.pointerEvents = "none";
+    }
 }
 
 //событие на кнопке построить Castle
@@ -221,27 +257,124 @@ function houseCastle() {
     let gold = 30;
     let tree = 20;
 
-    if ($rockCount > rock && $goldCount > gold && $treeCount > tree)
-// Создаем хижину при клике на кнопку построить
+    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree) {
+        $btnCastle.style.pointerEvents = "auto";
+        $btnCastle.style.backgroundColor = "#28a745";
+        // Создаем хижину при клике на кнопку построить
         $btnCastle.onclick = function () {
             // Удаляем кнопку построить
-            $btnCastle.style.pointerEvents = "none";
+            $btnCastle.style.pointerEvents = "";
+            $btnCastle.style.backgroundColor = "#dc3545";
+            //разрешайе постройку
             $isCastle = true;
+            //отнимаем ресурсы
             $rockCount -= rock;
             $goldCount -= gold;
             $treeCount -= tree;
+            //выводим значения
             rockCount($rockCount);
             treeCount($treeCount);
             goldCount($goldCount);
+            //очищаем счечик
+            clearInterval(gameCoreFunction());
         }
+    }else{
+        //блокируем кнопку
+        $btnCastle.style.backgroundColor = "#dc3545";
+        $btnCastle.style.pointerEvents = "none";
+    }
 }
 
+//функцыя формирования списка информацыи
 function list() {
-        var $list = document.querySelector('.info__list')
-        
-        var li = document.createElement(li);
-            li.classList.add('text-center')
+    var $list = document.querySelector('#list');
 
+    let $idList = ['rock', 'tree', 'gold'];
 
-
+    for (let i = 0; i < $idList.length; i++) {
+        var $li = document.createElement('li');
+        $li.classList.add('text-center');
+        $li.id = $idList[i];
+        $li.style.font = '25px Changa one';
+        $list.appendChild($li);
+    }
 }
+
+//Функцыя игры
+function gameCoreFunction() {
+
+    // Рисуем изображение от точки с координатами 0, 0
+    pictures($background, 0, 0, 1200, 657);
+
+    for (let $i = 0; $i < $player.length; $i++) {
+        pictures($playerImg, $player[$i].x, $player[$i].y, 159 / 2.5, 312 / 2.5);
+    }
+
+    // Старая позиция, которая стирается
+    var $playerX = $player[0].x;
+    var $playerY = $player[0].y;
+
+
+    // Направление перемещния
+    if ($d == "LEFT") {
+        $playerX -= $box;
+        $d = "";
+    }
+    if ($d == "UP") {
+        $playerY -= $box;
+        $d = "";
+    }
+    if ($d == "RIGHT") {
+        $playerX += $box;
+        $d = "";
+    }
+    if ($d == "DOWN") {
+        $playerY += $box;
+        $d = "";
+    }
+    ishouse($isCotteg, $isStonemill, $isWoodСutter, $isCastle);
+    resors($playerX, $playerY);
+    houseCottage();
+    houseStonemill();
+    houseWoodСutter();
+    houseCastle();
+
+
+    // Удаление последнего элемента массива
+    $player.pop();
+    // Новая позиция
+    let $newPos = {
+        x: $playerX,
+        y: $playerY
+    }
+
+    // Упирание в границы
+    if ($playerX < $box) {
+        $d = "RIGHT"
+    }
+    if ($playerX > 30 * $box) {
+        $d = "LEFT"
+    }
+    if ($playerY < $box) {
+        $d = "DOWN"
+    }
+    if ($playerY > 17 * $box) {
+        $d = "UP"
+    }
+
+    // Добавление нового элемента в массив
+    $player.unshift($newPos);
+
+    // Создание надписей счетчиков дерева и камня
+    /*  $ctx.fillStyle = "black";
+      $ctx.font = "45px Changa one";
+      $ctx.fillText($rockCountSign, 26 * $box, 14 * $box);
+      $ctx.fillText($treeCountSign, 26 * $box, 11 * $box);
+      $ctx.fillText($goldCountSign, 26 * $box, 8 * $box);*/
+
+    $liRock.innerHTML = $rockCountSign;
+    $liTree.innerHTML = $treeCountSign;
+    $liGold.innerHTML = $goldCountSign;
+};
+
+

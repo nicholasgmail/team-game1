@@ -22,8 +22,8 @@
     </div>
 </div>
 <div class="container">
-    <div class="container__row info">
-        <ul class="info__list d-flex flex-row justify-content-around w-100 m-0">
+    <div class="container__row info mr-4">
+        <ul id="list" class="info__list d-flex flex-row justify-content-around w-100 m-0">
         </ul>
     </div>
 </div>
@@ -35,50 +35,61 @@
         <div id="block_buildings">
             <div class="media">
                 <div class="media__img">
-                    <img class="media__cottage" src="./assets/img/cards/cottage.jpg">
+                    <img class="media__cottage" src="assets/img/cards/cottage.jpg">
                 </div>
                 <div class="btn">
-                    <h3>Хижина:</h3>
-                    <h4>2 дерева</h4>
-                    <h4>4 камня</h4>
+                    <h3 class="px-2">Хижина:</h3>
+                    <ul class="recourse px-2 m-0">
+                        <li data-tree="5">5 дерева</li>
+                        <li data-tree="10">10 камня</li>
+                        <li data-tree="7">7 золота</li>
+                    </ul>
                     <button id="btnCottage">Построить</button>
                 </div>
 
             </div>
             <div class="media">
                 <div class="media__img">
-                    <img class="media__stonemill" src="./assets/img/cards/stonemill.jpg">
+                    <img class="media__stonemill" src="assets/img/cards/stonemill.jpg">
                 </div>
                 <div class="btn">
-                    <h3>Каменеломня:</h3>
-                    <h4>2 дерева</h4>
-                    <h4>4 камня</h4>
+                    <h3 class="px-2">Каменеломня:</h3>
+                    <ul class="recourse px-2 m-0">
+                        <li data-tree="8">8 дерева</li>
+                        <li data-tree="12">12 камня</li>
+                        <li data-tree="9">9 золота</li>
+                    </ul>
                     <button id="btnStonemill">Построить</button>
                 </div>
             </div>
             <div class="media">
                 <div class="media__img">
-                    <img class="media__cutter" src="./assets/img/cards/wood_cutter.jpg">
+                    <img class="media__cutter" src="assets/img/cards/wood_cutter.jpg">
                 </div>
                 <div class="btn">
-                    <h3>Лесопилка:</h3>
-                    <h4>2 дерева</h4>
-                    <h4>4 камня</h4>
+                    <h3 class="px-2">Лесопилка:</h3>
+                    <ul class="recourse px-2 m-0">
+                        <li data-tree="8">8 дерева</li>
+                        <li data-tree="9">9 камня</li>
+                        <li data-tree="15">15 золота</li>
+                    </ul>
                     <button id="btnWoodCutter">Построить</button>
                 </div>
             </div>
             <div class="media">
                 <div class="media__img">
-                    <img class="media__castle" src="./assets/img/cards/castle.jpg">
+                    <img class="media__castle" src="assets/img/cards/castle.jpg">
                 </div>
                 <div class="btn">
-                    <h3>Замок:</h3>
-                    <h4>2 дерева</h4>
-                    <h4>4 камня</h4>
+                    <h3 class="px-2">Замок:</h3>
+                    <ul class="recourse px-2 m-0">
+                        <li data-tree="25">25 дерева</li>
+                        <li data-tree="30">30 камня</li>
+                        <li data-tree="20">20 золота</li>
+                    </ul>
                     <button id="btnCastle">Построить</button>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

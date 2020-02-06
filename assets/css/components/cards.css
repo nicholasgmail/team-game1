@@ -11,6 +11,7 @@
     display: flex;
     border: 2px solid black;
     margin: 13px;
+    width: px;
     height: 150px;
 }
 
@@ -36,11 +37,12 @@
 .btn button {
     height: 40px;
     width: 100px;
-    border-radius: 25px;
-    background: var(--green);
+    border-radius: 5px;
+    background: var(--danger);
     color: white;
     cursor: pointer;
     margin: 5px;
+    pointer-events: none;
 }
 #btnCottage{
     outline: none;
@@ -54,5 +56,13 @@
 }
 #btnCastle {
     outline: none;
+}
+
+#block_buildings .recourse{
+    list-style: none;
+}
+
+#block_buildings .recourse li{
+    font-size: 14px;
 }
 

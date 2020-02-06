@@ -42,3 +42,6 @@ var $rockCount = 0,
     $treeCountSign = "You have: " + $treeCount + " trees.",
     $goldCount = 0,
     $goldCountSign = "You have: " + $goldCount + " gold.";
+
+// масив списка для вывода информацыи, итоги игры
+var $liRock, $liTree, $liGold;

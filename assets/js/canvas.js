@@ -90,85 +90,12 @@ $isStonemill = false;
 $isWoodСutter = false;
 $isCastle = false;
 
+list();
+$liRock = document.querySelector('#rock');
+$liTree = document.querySelector('#tree');
+$liGold = document.querySelector('#gold');
 // Интервал основной функции с интервалом 0,1с
 var $game = setInterval(gameCoreFunction, 100);
-
-function gameCoreFunction() {
-
-    // Рисуем изображение от точки с координатами 0, 0
-    pictures($background, 0, 0, 1200, 657);
-
-    for (let $i = 0; $i < $player.length; $i++) {
-        pictures($playerImg, $player[$i].x, $player[$i].y, 159 / 2.5, 312 / 2.5);
-    }
-
-    // Старая позиция, которая стирается
-    var $playerX = $player[0].x;
-    var $playerY = $player[0].y;
-
-
-    // Направление перемещния
-    if ($d == "LEFT") {
-        $playerX -= $box;
-        $d = "";
-    }
-    if ($d == "UP") {
-        $playerY -= $box;
-        $d = "";
-    }
-    if ($d == "RIGHT") {
-        $playerX += $box;
-        $d = "";
-    }
-    if ($d == "DOWN") {
-        $playerY += $box;
-        $d = "";
-    }
-    ishouse($isCotteg,  $isStonemill, $isWoodСutter, $isCastle);
-    resors($playerX, $playerY);
-    houseCottage();
-    houseStonemill();
-    houseWoodСutter();
-    houseCastle();
-
-
-    // Удаление последнего элемента массива
-    $player.pop();
-    // Новая позиция
-    let $newPos = {
-        x: $playerX,
-        y: $playerY
-    }
-
-    // Упирание в границы
-    if ($playerX < $box) {
-        $d = "RIGHT"
-    }
-    if ($playerX > 30 * $box) {
-        $d = "LEFT"
-    }
-    if ($playerY < $box) {
-        $d = "DOWN"
-    }
-    if ($playerY > 17 * $box) {
-        $d = "UP"
-    }
-
-    // Добавление нового элемента в массив
-    $player.unshift($newPos);
-
-    // Создание надписей счетчиков дерева и камня
-    $ctx.fillStyle = "black";
-    $ctx.font = "45px Changa one";
-    $ctx.fillText($rockCountSign, 26 * $box, 14 * $box);
-    $ctx.fillText($treeCountSign, 26 * $box, 11 * $box);
-    $ctx.fillText($goldCountSign, 26 * $box, 8 * $box);
-
-
-
-};
-
-
 
 
 
