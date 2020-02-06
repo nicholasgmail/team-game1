@@ -340,13 +340,11 @@
 .modal {
     display: none;
     width: 360px;
-    padding: 20px;
-    background: white;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
     border-radius: 10px;
-    border: 2px solid var(--purple);
     position: fixed;
     top: 100px;
-    left: calc(50% - 200px);
+    left: calc(50% + 20px - 960px/2);
     max-height: 400px;
     z-index: 1050;
 }

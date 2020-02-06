@@ -1,18 +1,20 @@
 //Открыть модальное окно контактов
 function modalOpen() {
-    $menu = document.querySelectorAll('#menu a');
-    $menu.forEach(link => {
-        link.addEventListener('click', () => {
-            let $dataSet = link.dataset.modal;
-            if ($dataSet) {
-                let $modalOpev = document.querySelector(`#${$dataSet}`);
-                $modalOpev.style.display = 'block';
-                $modalOpev.classList.add('active');
-                $bgModal.classList.add('active');
-            }
-        })
+    /*$menu = document.querySelectorAll('#menu a');
+    $menu.forEach(link => {*/
+    window.addEventListener('load', () => {
+        /* let $dataSet = link.dataset.modal;
+         if ($dataSet) {*/
+        let $modalOpev = document.querySelector(`#open_load`);
+        $modalOpev.style.display = 'block';
+        $modalOpev.classList.add('active');
+        $bgModal.classList.add('active');
     })
+    /*}
+})*/
+    /* })*/
 }
+
 // функцыя закрытия модального окна
 function modalClose() {
     $modalCloseBtn = document.querySelectorAll('.modal__close');

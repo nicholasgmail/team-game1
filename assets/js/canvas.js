@@ -50,14 +50,14 @@ $rock = {
 
 // Создание дерева
 $tree = {
-    x: Math.floor(Math.random() * 30 + 1) * $box,
-    y: Math.floor(Math.random() * 17 + 1) * $box
+    x: random(30) * $box,
+    y: random(17) * $box
 }
 
 // Сундук
 $chest = {
-    x: Math.floor(Math.random() * 30 + 1) * $box,
-    y: Math.floor(Math.random() * 17 + 1) * $box
+    x: random(30) * $box,
+    y: random(17) * $box
 }
 
 //Переменная для постройки хижины
@@ -65,17 +65,6 @@ $btnCottage = document.querySelector("#btnCottage");
 // Рабочие клавиши
 document.addEventListener("keydown", direction);
 
-/*$background.addEventListener('onload', function () {
-    // Рисуем изображение от точки с координатами 0, 0
-    pictures($background, 0, 0, 1200, 657);
-
-
-    //рисование карточек
-
-
-});*/
-startTimer();
-/*card();*/
 //получаем кнопку для постройки хижины
 $btnCottage = document.querySelector("#btnCottage");
 //получаем кнопку для постройки каменеломни
@@ -91,14 +80,23 @@ $isWoodСutter = false;
 $isCastle = false;
 
 list();
+
 $liRock = document.querySelector('#rock');
 $liTree = document.querySelector('#tree');
 $liGold = document.querySelector('#gold');
-// Интервал основной функции с интервалом 0,1с
-var $game = setInterval(gameCoreFunction, 100);
 
+modalOpen();
 
+var $startBtn = document.querySelector('#start__game');
 
+$startBtn.addEventListener('click', function (e) {
+    let el = e.target;
+    modalRemoveClass($modal);
+    $bgModal.classList.remove('active');
+    startTimer();
 
+    // Интервал основной функции с интервалом 0,1с
+    var $game = setInterval(gameCoreFunction, 100);
+})
 
 
