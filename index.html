@@ -6,20 +6,100 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Team game</title>
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 <body>
 <div class="container">
-    <div class="container__row align-items-end justify-content-center py-5">
-        <canvas id="gameCanvas" width="1200" height="657"></canvas>
-    </div>
-    <div class="container__row align-items-end justify-content-center py-5">
-        <button id="dom" style="width: 150px; height: 50px;">построй</button>
+    <div class="container__row justify-content-center align-items-center mx-5 position-relative">
+        <div class="game-name position-absolute">
+            <h1>Rising Kingdom</h1>
+        </div>
+
+        <div id="timer" calass="px-3">
+            <p class="minutes-timer">00</p>:<p class="seconds-timer">00</p>
+        </div>
     </div>
 </div>
+<div class="container">
+    <div class="container__row info">
+        <ul class="info__list d-flex flex-row justify-content-around w-100 m-0">
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="container__row align-items-end justify-content-center">
+        <canvas class="my-0" id="gameCanvas" width="1200" height="657"></canvas>
+    </div>
+    <div class="container__row align-items-end justify-content-center py-5">
+        <div id="block_buildings">
+            <div class="media">
+                <div class="media__img">
+                    <img class="media__cottage" src="./assets/img/cards/cottage.jpg">
+                </div>
+                <div class="btn">
+                    <h3>Хижина:</h3>
+                    <h4>2 дерева</h4>
+                    <h4>4 камня</h4>
+                    <button id="btnCottage">Построить</button>
+                </div>
+
+            </div>
+            <div class="media">
+                <div class="media__img">
+                    <img class="media__stonemill" src="./assets/img/cards/stonemill.jpg">
+                </div>
+                <div class="btn">
+                    <h3>Каменеломня:</h3>
+                    <h4>2 дерева</h4>
+                    <h4>4 камня</h4>
+                    <button id="btnStonemill">Построить</button>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media__img">
+                    <img class="media__cutter" src="./assets/img/cards/wood_cutter.jpg">
+                </div>
+                <div class="btn">
+                    <h3>Лесопилка:</h3>
+                    <h4>2 дерева</h4>
+                    <h4>4 камня</h4>
+                    <button id="btnWoodCutter">Построить</button>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media__img">
+                    <img class="media__castle" src="./assets/img/cards/castle.jpg">
+                </div>
+                <div class="btn">
+                    <h3>Замок:</h3>
+                    <h4>2 дерева</h4>
+                    <h4>4 камня</h4>
+                    <button id="btnCastle">Построить</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="open_login" class="modal">
+    <div class="modal__close" data-close="modal">X</div>
+    <h1>hello</h1>
+</div>
+<div id="open_contac" class="modal">
+    контакт
+    <div class="modal__close" data-close="modal">X</div>
+    <div class="content">
+        Hello
+    </div>
+</div>
+<div id="modal-bg"></div>
 <script src="assets/js/variables.js"></script>
+<script src="assets/js/timer.js"></script>
 <script src="assets/js/functions.js"></script>
+<script src="assets/js/card.js"></script>
+<script src="assets/js/modal.js"></script>
 <script src="assets/js/canvas.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

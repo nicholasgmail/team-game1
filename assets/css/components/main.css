@@ -1,0 +1,13 @@
+
+.game-name {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    color: var(--primary);
+    top: 40%;
+    left: 10%;
+    margin-left: 3%;
+    transform: translate(-50%, -50%);
+}
+
+.info .info__list{
+    list-style: none;
+}

@@ -1,0 +1,465 @@
+
+:root {
+    --blue: #037BF2;
+    --purple: #8960a6;
+    --black: #222233;
+    --gray-100: #f1f1f1;
+}
+
+/*header*/
+#shapka {
+    width: 100%;
+    height: 65px;
+    background: var(--purple);
+}
+
+/*лого*/
+#logo {
+    width: 100px;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+#logo img {
+    width: 100%;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+}
+
+#logo span {
+    font-size: 30px;
+    position: absolute;
+    top: 16px;
+    left: 130px;
+    color: white;
+}
+
+/*меню*/
+#menu {
+    float: right;
+    height: 100%;
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    height: calc(100% - 15px);
+    display: block;
+    float: left;
+    padding: 14px 10px 0;
+}
+
+#menu a:hover {
+    background-color: var(--black);
+}
+
+/*==========================================
+*  Основной блок с контактами и сообщениями
+*===========================================
+**/
+#content {
+    width: 800px;
+    height: calc(100% - 100px);
+    margin: 0 auto;
+    background-color: white;
+    overflow: hidden;
+}
+
+/*==========================================
+*  Левый блок с поиском и контактами
+*===========================================
+**/
+
+/*Поиск*/
+#poisk {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+}
+
+#poisk .btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #efeeee;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#poisk .btn:active {
+    background: var(--purple);
+}
+
+#poisk .btn img {
+    width: 100%;
+    height: 100%;
+}
+
+#poisk input {
+    background: #efeeee;
+    border: none;
+    width: calc(75% - 20px);
+    height: 100%;
+    margin: 0;
+    float: left;
+    margin-right: 10px;
+    outline: none;
+    padding: 0 10px;
+}
+
+/*user*/
+#user {
+    width: 240px;
+    height: 100%;
+    float: left;
+}
+
+/*==========================================
+*  Контакты
+*===========================================
+**/
+/*список пользователей*/
+#spisok {
+    height: calc(100% - 50px);
+    overflow-y: auto;
+}
+
+#spisok ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#spisok ul .avatar {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 10px;
+}
+
+#spisok ul .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+#spisok ul li {
+    padding: 10px;
+    position: relative;
+    width: calc(100% - 20px);
+}
+
+#spisok ul li h2 {
+    margin: 0 0 5px 0;
+}
+
+#spisok ul li h2, #spisok ul li p {
+    margin: 0;
+}
+
+#spisok ul li .time {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#soobsheniya {
+    width: calc(800px - 260px);
+    float: right;
+    height: 100%;
+}
+
+#spisok-soobsheniy {
+    height: 80%;
+    overflow-y: auto;
+}
+
+#spisok-soobsheniy ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#spisok-soobsheniy ul .avatar {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 10px;
+}
+
+#spisok-soobsheniy ul .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+#spisok-soobsheniy ul li {
+    position: relative;
+    padding: 10px;
+}
+
+#spisok-soobsheniy ul h2,
+#spisok-soobsheniy ul p {
+    margin: 0;
+}
+
+#spisok-soobsheniy ul .tume {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/*
+ *  scroll bar
+ */
+
+#spisok::-webkit-scrollbar-track,
+.modal .content::-webkit-scrollbar-track,
+#spisok-soobsheniy::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+#spisok::-webkit-scrollbar,
+.modal .content::-webkit-scrollbar,
+#spisok-soobsheniy::-webkit-scrollbar {
+    width: 2px;
+    background-color: #F5F5F5;
+}
+
+#spisok::-webkit-scrollbar-thumb,
+.modal .content::-webkit-scrollbar-thumb,
+#spisok-soobsheniy::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid #555555;
+}
+
+/*======================================
+ *  форма отправки сообщения стили
+ *======================================
+ */
+
+#form {
+    padding: 10px;
+    height: calc(20% - 20px);
+}
+
+.form .form__top {
+    width: 100%;
+    height: 80%;
+}
+
+#form .btn__send svg {
+    width: 15px;
+    height: 15px;
+}
+
+#form textarea {
+    width: calc(100% - 25% - 10px);
+    height: calc(100% - 5px);
+    border-bottom: 1px solid var(--blue);
+}
+
+#form .avatar {
+    width: 10%;
+    float: left;
+    margin-right: 10px;
+}
+
+#form .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.form .form__bottom {
+    width: 100%;
+    float: right;
+}
+
+.form__bottom .btn__paperclip {
+    border: 0;
+    outline: none;
+    background: none;
+    width: 25px;
+    cursor: pointer;
+    margin-left: 4rem;
+    margin-top: 5px;
+}
+
+.form__bottom .btn__paperclip:hover {
+    color: var(--purple);
+}
+
+.form__bottom .btn__send, .form__bottom .btn__smail, #open_login .btn__login {
+    color: var(--blue);
+    float: right;
+    margin-right: 5rem;
+    margin-top: 8px;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+}
+
+.form__bottom .btn__send:hover, .form__bottom .btn__smail:hover{
+    color: var(--purple);
+}
+
+.form__bottom .btn__send:hover::after, .form__bottom .btn__smail:hover::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--purple);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    animation: hov .3s ease-in-out;
+}
+
+#soobsheniya .btn__smail {
+    margin-right: 1rem;
+}
+
+@keyframes hov {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+/*======================================
+ *  модальніе окна стили
+ *======================================
+ */
+.modal {
+    display: none;
+    width: 360px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid var(--purple);
+    position: fixed;
+    top: 100px;
+    left: calc(50% - 200px);
+    max-height: 400px;
+    z-index: 1050;
+}
+
+
+.modal .modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.modal .content {
+    height: 100%;
+    overflow-y: auto;
+    height: 380px;
+    margin-top: 15px;
+}
+
+/*
+* модальное окно с контактами
+*/
+
+.modal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+
+.modal ul .avatar {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 10px;
+}
+
+.modal ul .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.modal ul li {
+    padding: 10px;
+    position: relative;
+    width: calc(100% - 20px);
+}
+
+.modal ul li h2 {
+    margin: 0 0 5px 0;
+}
+
+.modal ul li h2 {
+    margin: 10px;
+}
+
+#modal-bg {
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    opacity: 0;
+    z-index: 1020;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+#modal-bg.active {
+    opacity: 1;
+    transition: all .5s;
+    pointer-events: all;
+}
+
+/*
+* форма модального окна с контактами
+*/
+
+#open_login .form {
+    background: white;
+}
+
+#open_login .form h1 {
+    text-align: center;
+    margin-bottom: .5rem;
+}
+#open_login .form hr {
+    margin-bottom: 1rem;
+    border-color: #8960a6;
+}
+#open_login .form input {
+    width: calc(100% - 30px);
+    margin-top: .2rem;
+    margin-bottom: 1rem;
+    padding: 15px;
+    border: 1px solid var(--gray-100);
+    background-color: var(--gray-100);
+}
+
+#open_login .form input:active {
+    border: 1px solid var(--blue);
+}
+#open_login .btn__login{
+    width: 145px;
+    height: 30px;
+    font-weight: bold;
+    background-color: var(--blue);
+    color: white;
+    margin: 0;
+}
+#open_login .btn__login:hover{
+    background-color: white;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}

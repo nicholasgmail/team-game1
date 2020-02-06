@@ -8,4 +8,11 @@
 @import "components/utilite.css";
 /*глобальные стили*/
 @import "components/global__style.css";
-
+/*модальние окна*/
+@import "components/modal.css";
+/*карточки для игры*/
+@import "components/cards.css";
+/*таймер для игры*/
+@import "components/timer.css";
+/*таймер для игры*/
+@import "components/main.css";
