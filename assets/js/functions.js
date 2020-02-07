@@ -310,7 +310,7 @@ function gameCoreFunction() {
 
     // Рисуем изображение от точки с координатами 0, 0
     pictures($background, 0, 0, 1200, 657);
-
+    $bgSound.volume = 0.2;
     $bgSound.play();
 
     // Старая позиция, которая стирается
