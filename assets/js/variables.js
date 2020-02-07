@@ -3,7 +3,7 @@
  *
  * */
 //глобальные переменные
-var $cvs, $ctx, $box, $arock, $chest, $tree, $game, $d,
+var $cvs, $ctx, $box, $arock, $game, $d,
     //создание ресурсов камень, дерева, cундук
     $rock, $tree, $chest,
     //переменные кнопок
@@ -11,18 +11,25 @@ var $cvs, $ctx, $box, $arock, $chest, $tree, $game, $d,
     //проверяем можно строить или нет значение boolean
     $isCotteg, $isStonemill, $isWoodСutter, $isCastle;
 
-
 //создаем изображение
-var $background = new Image();
-var $cottage = new Image();
-var $stonemill = new Image();
-var $wood_cutter = new Image();
-var $castle = new Image();
-var $ground = new Image();
-var $rockImg = new Image();
-var $chestImg = new Image();
-var $treeImg = new Image();
-var $playerImg = new Image();
+var $background = new Image(),
+    $cottage = new Image(),
+    $stonemill = new Image(),
+    $wood_cutter = new Image(),
+    $castle = new Image(),
+    $ground = new Image(),
+    $rockImg = new Image(),
+    $chestImg = new Image(),
+    $treeImg = new Image(),
+    $playerImg = new Image(),
+    $fountain = new Image(),
+    $pointer1 = new Image(),
+    $well = new Image(),
+    $stele = new Image(),
+    $flower1 = new Image(),
+    $pointer2 = new Image(),
+    $lamp = new Image(),
+    $teleport = new Image();
 
 
 // создаем звуки
@@ -81,6 +88,14 @@ $rockImg.src = "./assets/img/resources/a-rock-1.png";
 $chestImg.src = "./assets/img/resources/chest-1.png";
 $treeImg.src = "./assets/img/resources/tree-2.png";
 $playerImg.src = "./assets/img/player.png";
+$fountain.src = "./assets/img/fountain.png";
+$pointer1.src = "./assets/img/pointer4.png";
+$well.src = "./assets/img/well.png";
+$stele.src = "./assets/img/stele.png";
+$flower1.src = "./assets/img/flower1.png";
+$pointer2.src = "./assets/img/pointer1.png";
+$lamp.src = "./assets/img/lamp.png";
+$teleport.src = "./assets/img/teleport.png";
 
 
 //  Все переменные оставляю сдесь, чтобы потом не потерять их
@@ -96,3 +111,6 @@ var $endScore = 0;
 var $endModal = document.querySelector("#end-modal");
 //перезагрузка игры
 var $btnRestart = document.querySelector('#restartButton');
+
+//Кнопка для постройки хижины
+$btnCottage = document.querySelector("#btnCottage");

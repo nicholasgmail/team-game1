@@ -6,10 +6,13 @@
           content="width= 1200, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Team game</title>
+    <!--Подключаем стили font google-->
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <!--Общий бандл стилей import-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="body">
+<!--Контейнер с таймером и заголовком игры-->
 <div class="container">
     <div class="container__row justify-content-center align-items-center mx-5 position-relative">
         <div class="game-name position-absolute">
@@ -21,12 +24,14 @@
         </div>
     </div>
 </div>
+<!--Контейнер с игрой-->
 <div class="container">
     <div class="container__row info mr-4">
         <ul id="list" class="info__list d-flex flex-row justify-content-around w-100 m-0">
         </ul>
     </div>
 </div>
+<!--Контейнер с постройками-->
 <div class="container">
     <div class="container__row align-items-end justify-content-center">
         <canvas class="my-0" id="gameCanvas" width="1200" height="657"></canvas>
@@ -93,6 +98,7 @@
         </div>
     </div>
 </div>
+<!--Модальные окна-->
 <div id="open_load" class="modal">
     <div class="modalWindow">
         <div class="control">
@@ -121,7 +127,7 @@
                     <ul>
                         <li>строй постройки</li>
                         <li>зарабатывай очки</li>
-                        <li>розвивай инфраструктуру</li>
+                        <li>развивай инфраструктуру</li>
                     </ul>
                 </li>
             </ul>
@@ -129,32 +135,32 @@
     </div>
 </div>
 <div id="end-modal">
-    <h2 id="game-over-sign">Game Over</h2>
+    <h2 id="game-over-sign" class="text-capitalize">Game end</h2>
     <div id="final-resources-block">
         <h3 id="final-resources-sign">Вы собрали:</h3>
         <div id="resources-score-block">
-            <p class="resources-score-sign"><span id="tree-score">0</span> дерева.</p>
-            <p class="resources-score-sign"><span id="rock-score">0</span> камня.</p>
-            <p class="resources-score-sign"><span id="gold-score">0</span> золота.</p>
+            <p class="resources-score-sign text-right"><span id="tree-score">0</span> дерева.</p>
+            <p class="resources-score-sign text-right"><span id="rock-score">0</span> камня.</p>
+            <p class="resources-score-sign text-right"><span id="gold-score">0</span> золота.</p>
         </div>
     </div>
 
     <div id="building-score-signs-block">
         <h3 id="final-building-sign">Вы построили:</h3>
         <div id="building-score-block">
-
         </div>
     </div>
+    <img class="end-game position-absolute" src="./assets/img/game_end.gif" alt="end_game">
     <button id="restartButton">Restart</button>
 
 </div>
 <div id="modal-bg"></div>
+<!--Подключены скрипты которые местят глобальные переменные и основной функцыонал-->
 <script src="assets/js/variables.js"></script>
 <script src="assets/js/timer.js"></script>
 <script src="assets/js/functions.js"></script>
 <script src="assets/js/card.js"></script>
 <script src="assets/js/modal.js"></script>
 <script src="assets/js/canvas.js"></script>
-<script src="assets/js/script.js"></script>
 </body>
 </html>

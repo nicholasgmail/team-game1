@@ -13,7 +13,6 @@
 $cvs = document.querySelector("#gameCanvas");
 $ctx = $cvs.getContext("2d");
 
-
 // создаем квадрат на холсте
 $box = 32;
 
@@ -28,31 +27,29 @@ $player[0] = {
 
 // Создается камень
 $rock = {
-    x: random(30) * $box,
-    y: random(17) * $box
+    x: random(29) * $box,
+    y: random(16) * $box
 }
 
 // Создание дерева
 $tree = {
-    x: random(30) * $box,
-    y: random(17) * $box
+    x: random(29) * $box,
+    y: random(16) * $box
 }
 
 // Сундук
 $chest = {
-    x: random(30) * $box,
-    y: random(17) * $box
+    x: random(29) * $box,
+    y: random(16) * $box
 }
 
-
-//Переменная для постройки хижины
-$btnCottage = document.querySelector("#btnCottage");
 // Рабочие клавиши
 document.addEventListener("keydown", direction);
 
 //отрабатываем вывод списка ресурсов
 list();
 
+ //получаем ресурсы
 $liRock = document.querySelector('#rock');
 $liTree = document.querySelector('#tree');
 $liGold = document.querySelector('#gold');
@@ -74,7 +71,16 @@ $startBtn.addEventListener('click', function (e) {
 
 });
 
+//открываем окно
+modalOpen();
 
+//закрываем модальное окно
+modalClose();
+
+//закрываем модальное окно по клику на window
+modalCloseWindow();
+
+//перезагрузка игры
 $btnRestart.addEventListener('click', reload);
 
 

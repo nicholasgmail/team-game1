@@ -11,15 +11,25 @@
     transform: translate(-50%, -50%);
     border-radius: 10%;
 	z-index: 1050;
-}	
-
+}
+#end-modal::before {
+	position: absolute;
+	content: "";
+	background: #156e496b;
+	width: 100%;
+	height: 100%;
+	border-radius: 10%;
+	top: 0;
+	left: 0;
+	opacity: .5;
+}
 #end-modal.opened {
 	display: flex;
 }	
 
 #game-over-sign {
 	font-size: 60px;
-	color: #C32054;
+	color: #c32020;
 	position: absolute;
 	top: 10%;
 	left: 50%;
@@ -34,11 +44,11 @@
 
 #final-resources-sign, #final-building-sign {
 	font-size: 38px;
-	color: #C32054;
+	color: #c32020;
 }
 
 #resources-score-block p, #building-score-block p {
-	color: #C32054;
+	color: #c32020;
 	font-size: 30px;	
 }
 
@@ -59,7 +69,7 @@
 	font-size: 60px;
 	font-weight: bold;
 	text-shadow: black 0px 8px 8px;
-	color: #C32054;
+	color: #c32020;
 	background: transparent;
 	position: absolute;
 	top: 77%;
@@ -80,4 +90,9 @@
 	transform: translateY(4px);
 	text-shadow: #4109E3 0px 4px 4px;
 	color: #BEAFAF;
+}
+.end-game{
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, 50%);
 }

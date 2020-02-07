@@ -50,14 +50,14 @@ function resors(playerX, playerY) {
         //отображаем количество камней
         rockCount($rockCount);
         $rock = {
-            x: random(30) * $box,
-            y: random(17) * $box
+            x: random(29) * $box,
+            y: random(16) * $box
         };
         // Если блок занят выбрать другой
         if ($rock.x == $tree.x && $rock.y == $tree.y || $rock.x == $chest.x && $rock.y == $chest.y) {
             $rock = {
-                x: random(30) * $box,
-                y: random(17) * $box
+                x: random(29) * $box,
+                y: random(16) * $box
             }
         }
     }
@@ -71,14 +71,14 @@ function resors(playerX, playerY) {
         //отображаем количество деревев
         treeCount($treeCount);
         $tree = {
-            x: random(30) * $box,
-            y: random(17) * $box
+            x: random(29) * $box,
+            y: random(16) * $box
         }
         // Если блок занят выбрать другой
         if ($tree.x == $rock.x && $tree.y == $rock.y || $tree.x == $chest.x && $tree.y == $chest.y) {
             $tree = {
-                x: random(30) * $box,
-                y: random(17) * $box
+                x: random(29) * $box,
+                y: random(16) * $box
             }
         }
     }
@@ -92,14 +92,14 @@ function resors(playerX, playerY) {
         // Отображаем количество золота
         goldCount($goldCount);
         $chest = {
-            x: random(30) * $box,
-            y: random(17) * $box
+            x: random(29) * $box,
+            y: random(16) * $box
         };
         // Если блок занят выбрать другой
         if ($chest.x == $tree.x && $chest.y == $tree.y || $chest.x == $rock.x && $chest.y == $rock.y) {
             $chest = {
-                x: random(30) * $box,
-                y: random(17) * $box
+                x: random(29) * $box,
+                y: random(16) * $box
             }
         }
     }
@@ -109,20 +109,46 @@ function resors(playerX, playerY) {
 //Функцыя постройки зданий
 function ishouse(iscotteg, isstonemill, iswood, iscastle) {
     if (iscotteg == true) {
+        // построить цветы рядом с домом
+        pictures($flower1, 22 * $box, 6.5 * $box, 48, 35);
+        // построить фонтан рядом с домом
+        pictures($fountain, 19 * $box, 5 * $box, 101 / 2, 98 / 2);
+        // построить указатель рядом с домом
+        pictures($pointer1, 26.5 * $box, 5.8 * $box, 33, 36);
         //построить здание
         pictures($cottage, 23 * $box, 5 * $box, 182 / 1.5, 167 / 1.5);
+        // строим фонарный столп
+        pictures($lamp, 25 * $box, 6.5 * $box, 31, 56);
     }
     if (isstonemill == true) {
+        // построить цветы рядом с каменеломней
+        pictures($flower1, 3 * $box, 5 * $box, 48, 35);
+        // строим фонарный столп
+        pictures($lamp, 1 * $box, 3 * $box, 31, 56);
+        // указатель
+        pictures($pointer2, 5.5 * $box, 5.5 * $box, 34, 36);
         //построить здание
         pictures($stonemill, 2 * $box, 2 * $box, 257 / 1.5, 180 / 1.5);
     }
     if (iswood == true) {
+        // построить цветы рядом с лесопилкой
+        pictures($flower1, 17 * $box, 5 * $box, 48, 35);
+        // строим фонарный столп
+        pictures($lamp, 15 * $box, 2 * $box, 31, 56);
+        // построить колодец рядом с лесопилкой
+        pictures($well, 22 * $box, 4 * $box, 52, 55);
         //построить здание
         pictures($wood_cutter, 17 * $box, 1 * $box, 192 / 1.5, 178 / 1.5);
     }
     if (iscastle == true) {
+        // построить обелиски рядом с замком
+        pictures($teleport, 29 * $box, 1 * $box, 67 / 1.5, 84 /1.5);
+        // построить обелиски рядом с замком
+        pictures($stele, 27 * $box, 2 * $box, 55, 129);
         //построить здание
         pictures($castle, 29 * $box, 1 * $box, 479 / 2.5, 490 / 2.5);
+        // построить обелиски рядом с замком
+        pictures($stele, 30 * $box, 4 * $box, 55, 129);
     }
 }
 
@@ -156,7 +182,7 @@ function houseCottage() {
     let rock = 5;
     let gold = 10;
     let tree = 7;
-    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree) {
+    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree && $isCotteg == false) {
         $btnCottage.style.pointerEvents = "auto";
         $btnCottage.style.background = "#28a745";
         // Создаем хижину при клике на кнопку построить
@@ -190,7 +216,7 @@ function houseStonemill() {
     let gold = 12;
     let tree = 9;
 
-    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree) {
+    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree && $isStonemill == false) {
         $btnStonemill.style.pointerEvents = "auto";
         $btnStonemill.style.backgroundColor = "#28a745";
         // Создаем хижину при клике на кнопку построить
@@ -223,7 +249,7 @@ function houseWoodСutter() {
     let gold = 9;
     let tree = 15;
 
-    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree) {
+    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree && $isWoodСutter == false) {
         $btnWoodCutter.style.pointerEvents = "auto";
         $btnWoodCutter.style.backgroundColor = "#28a745";
         // Создаем хижину при клике на кнопку построить
@@ -259,7 +285,7 @@ function houseCastle() {
     let gold = 30;
     let tree = 20;
 
-    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree) {
+    if ($rockCount >= rock && $goldCount >= gold && $treeCount >= tree && $isCastle == false) {
         $btnCastle.style.pointerEvents = "auto";
         $btnCastle.style.backgroundColor = "#28a745";
         // Создаем хижину при клике на кнопку построить
@@ -303,7 +329,6 @@ function list() {
         $list.appendChild($li);
     }
 }
-
 
 //Функцыя игры
 function gameCoreFunction() {
@@ -438,11 +463,14 @@ function buildingEndScreen() {
 // Функция вызывает модальное окно
 
 function endScreenCreation() {
-    $endModal.classList.add("opened");
-    $bgModal.classList.add('active');
-    clearInterval(interval);
-    clearInterval($game);
-    body.style.overflow = 'hidden'
+    let $end = setInterval(function () {
+        $endModal.classList.add("opened");
+        $bgModal.classList.add('active');
+        clearInterval(interval);
+        clearInterval($game);
+        body.style.overflow = 'hidden';
+        clearInterval($end)
+    }, 10000)
 }
 
 //Функцыя перезагрузки игры
