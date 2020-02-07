@@ -62,15 +62,6 @@ var $isCotteg = false,
     $isWoodСutter = false,
     $isCastle = false;
 
-console.log($isCotteg);
-//Если все здания построины заканчываем игру
-/*
-var $trueCotteg = false,
-    $trueCastle = false,
-    $trueWoodСutter = false,
-    $trueStonemill = false;
-*/
-
 //получаем кнопку старт
 $startBtn = document.querySelector('#start__game');
 

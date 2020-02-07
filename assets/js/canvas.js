@@ -44,6 +44,7 @@ $chest = {
     y: random(17) * $box
 }
 
+
 //Переменная для постройки хижины
 $btnCottage = document.querySelector("#btnCottage");
 // Рабочие клавиши

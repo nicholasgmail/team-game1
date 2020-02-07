@@ -210,8 +210,6 @@ function houseStonemill() {
             rockCount($rockCount);
             treeCount($treeCount);
             goldCount($goldCount);
-            //очищаем счечик
-            clearInterval();
         }
     } else {
         $btnStonemill.style.backgroundColor = "#dc3545";
@@ -307,13 +305,13 @@ function list() {
 }
 
 
-console.dir($playerImg);
-
 //Функцыя игры
 function gameCoreFunction() {
 
     // Рисуем изображение от точки с координатами 0, 0
     pictures($background, 0, 0, 1200, 657);
+
+    $bgSound.play();
 
     // Старая позиция, которая стирается
     var $playerX = $player[0].x;
@@ -371,24 +369,16 @@ function gameCoreFunction() {
     $player.unshift($newPos);
 
     // Создание надписей счетчиков дерева и камня
-    /*  $ctx.fillStyle = "black";
-      $ctx.font = "45px Changa one";
-      $ctx.fillText($rockCountSign, 26 * $box, 14 * $box);
-      $ctx.fillText($treeCountSign, 26 * $box, 11 * $box);
-      $ctx.fillText($goldCountSign, 26 * $box, 8 * $box);*/
-
     $liRock.innerHTML = $rockCountSign;
     $liTree.innerHTML = $treeCountSign;
     $liGold.innerHTML = $goldCountSign;
 
-
-
-        endScoreReset();
+    endScoreReset();
 
     for (let $i = 0; $i < $player.length; $i++) {
         pictures($playerImg, $player[$i].x, $player[$i].y, 159 / 2.5, 312 / 2.5);
     }
-        //вызов модального окна конца игры
+    //вызов модального окна конца игры
     if ($isCotteg == true && $isWoodСutter == true && $isStonemill == true && $isCastle == true) {
         endScreenCreation();
     }
@@ -406,41 +396,41 @@ function endScoreReset() {
 // Проверяет что построил игрок за время игры
 function buildingEndScreen() {
 
-        //создаем блок в модальном окне cottage
-        $buildingScoreSign = document.createElement("p");
-        $buildingScoreSign.className = "building-score-sign";
-        $buildingScoreSignImg = document.createElement("img");
-        $buildingScoreSignImg.src = "./assets/img/cottage_182_167.png";
-        $buildingScoreBlock.appendChild($buildingScoreSign);
-        $buildingScoreSign.innerText = "Хижину ";
-        $buildingScoreSign.appendChild($buildingScoreSignImg);
+    //создаем блок в модальном окне cottage
+    $buildingScoreSign = document.createElement("p");
+    $buildingScoreSign.className = "building-score-sign";
+    $buildingScoreSignImg = document.createElement("img");
+    $buildingScoreSignImg.src = "./assets/img/cottage_182_167.png";
+    $buildingScoreBlock.appendChild($buildingScoreSign);
+    $buildingScoreSign.innerText = "Хижину ";
+    $buildingScoreSign.appendChild($buildingScoreSignImg);
 
-        //создаем блок в модальном окне wood_cutter
-        $buildingScoreSign = document.createElement("p");
-        $buildingScoreSign.className = "building-score-sign";
-        $buildingScoreSignImg = document.createElement("img");
-        $buildingScoreSignImg.src = "./assets/img/wood_cutter_192_178.png";
-        $buildingScoreBlock.appendChild($buildingScoreSign);
-        $buildingScoreSign.innerText = "Лесопилку ";
-        $buildingScoreSign.appendChild($buildingScoreSignImg);
+    //создаем блок в модальном окне wood_cutter
+    $buildingScoreSign = document.createElement("p");
+    $buildingScoreSign.className = "building-score-sign";
+    $buildingScoreSignImg = document.createElement("img");
+    $buildingScoreSignImg.src = "./assets/img/wood_cutter_192_178.png";
+    $buildingScoreBlock.appendChild($buildingScoreSign);
+    $buildingScoreSign.innerText = "Лесопилку ";
+    $buildingScoreSign.appendChild($buildingScoreSignImg);
 
-         //создаем блок в модальном окне stonemill
-        $buildingScoreSign = document.createElement("p");
-        $buildingScoreSign.className = "building-score-sign";
-        $buildingScoreSignImg = document.createElement("img");
-        $buildingScoreSignImg.src = "./assets/img/stonemill_257_180.png";
-        $buildingScoreBlock.appendChild($buildingScoreSign);
-        $buildingScoreSign.innerText = "Каменоломню ";
-        $buildingScoreSign.appendChild($buildingScoreSignImg);
+    //создаем блок в модальном окне stonemill
+    $buildingScoreSign = document.createElement("p");
+    $buildingScoreSign.className = "building-score-sign";
+    $buildingScoreSignImg = document.createElement("img");
+    $buildingScoreSignImg.src = "./assets/img/stonemill_257_180.png";
+    $buildingScoreBlock.appendChild($buildingScoreSign);
+    $buildingScoreSign.innerText = "Каменоломню ";
+    $buildingScoreSign.appendChild($buildingScoreSignImg);
 
-        //создаем блок в модальном окне castle
-        $buildingScoreSign = document.createElement("p");
-        $buildingScoreSign.className = "building-score-sign";
-        $buildingScoreSignImg = document.createElement("img");
-        $buildingScoreSignImg.src = "./assets/img/castle_479_490.png";
-        $buildingScoreBlock.appendChild($buildingScoreSign);
-        $buildingScoreSign.innerText = "Замок ";
-        $buildingScoreSign.appendChild($buildingScoreSignImg);
+    //создаем блок в модальном окне castle
+    $buildingScoreSign = document.createElement("p");
+    $buildingScoreSign.className = "building-score-sign";
+    $buildingScoreSignImg = document.createElement("img");
+    $buildingScoreSignImg.src = "./assets/img/castle_479_490.png";
+    $buildingScoreBlock.appendChild($buildingScoreSign);
+    $buildingScoreSign.innerText = "Замок ";
+    $buildingScoreSign.appendChild($buildingScoreSignImg);
 
 }
 
@@ -448,11 +438,11 @@ function buildingEndScreen() {
 // Функция вызывает модальное окно
 
 function endScreenCreation() {
-        $endModal.classList.add("opened");
-        $bgModal.classList.add('active');
-        clearInterval(interval);
-        clearInterval($game);
-        body.style.overflow = 'hidden'
+    $endModal.classList.add("opened");
+    $bgModal.classList.add('active');
+    clearInterval(interval);
+    clearInterval($game);
+    body.style.overflow = 'hidden'
 }
 
 //Функцыя перезагрузки игры
