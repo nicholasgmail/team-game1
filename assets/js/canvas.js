@@ -13,6 +13,7 @@
 $cvs = document.querySelector("#gameCanvas");
 $ctx = $cvs.getContext("2d");
 
+
 // создаем квадрат на холсте
 $box = 32;
 
@@ -55,16 +56,25 @@ $liRock = document.querySelector('#rock');
 $liTree = document.querySelector('#tree');
 $liGold = document.querySelector('#gold');
 
+//вызов модального окна начала игры
 modalOpen();
+//отрисовка иконок, модальное окно окончание игры
+buildingEndScreen();
 
 $startBtn.addEventListener('click', function (e) {
     let el = e.target;
     modalRemoveClass($modal);
     $bgModal.classList.remove('active');
-    startTimer();
 
+    startTimer();
+    body.style.overflow = '';
     // Интервал основной функции с интервалом 0,1с
-    var $game = setInterval(gameCoreFunction, 100);
-})
+    $game = setInterval(gameCoreFunction, 100);
+
+});
+
+
+$btnRestart.addEventListener('click', reload);
+
 
 

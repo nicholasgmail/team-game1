@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body id="body">
 <div class="container">
     <div class="container__row justify-content-center align-items-center mx-5 position-relative">
         <div class="game-name position-absolute">
@@ -94,7 +94,6 @@
     </div>
 </div>
 <div id="open_load" class="modal">
-    <div class="modal__close" data-close="modal">X</div>
     <div class="modalWindow">
         <div class="control">
             <h4>Управление:</h4>
@@ -129,13 +128,25 @@
         </div>
     </div>
 </div>
-</div>
-<div id="open_contac" class="modal">
-    контакт
-    <div class="modal__close" data-close="modal">X</div>
-    <div class="content">
-        Hello
+<div id="end-modal">
+    <h2 id="game-over-sign">Game Over</h2>
+    <div id="final-resources-block">
+        <h3 id="final-resources-sign">Вы собрали:</h3>
+        <div id="resources-score-block">
+            <p class="resources-score-sign"><span id="tree-score">0</span> дерева.</p>
+            <p class="resources-score-sign"><span id="rock-score">0</span> камня.</p>
+            <p class="resources-score-sign"><span id="gold-score">0</span> золота.</p>
+        </div>
     </div>
+
+    <div id="building-score-signs-block">
+        <h3 id="final-building-sign">Вы построили:</h3>
+        <div id="building-score-block">
+
+        </div>
+    </div>
+    <button id="restartButton">Restart</button>
+
 </div>
 <div id="modal-bg"></div>
 <script src="assets/js/variables.js"></script>

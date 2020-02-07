@@ -3,7 +3,7 @@
  *
  * */
 //глобальные переменные
-var $cvs, $ctx, $box, $arock, $chest, $tree, $resourse, $d,
+var $cvs, $ctx, $box, $arock, $chest, $tree, $game, $d,
     //создание ресурсов камень, дерева, cундук
     $rock, $tree, $chest,
     //переменные кнопок
@@ -29,6 +29,7 @@ var $playerImg = new Image();
 var $chestSound = new Audio();
 var $treeSound = new Audio();
 var $rockSound = new Audio();
+var $bgSound = new Audio();
 
 //модальное окно
 var $modalCloseBtn = null;
@@ -56,10 +57,19 @@ $btnWoodCutter = document.querySelector("#btnWoodCutter");
 $btnCastle = document.querySelector("#btnCastle");
 
 //разрешаем или нет постройку зданий
-$isCotteg = false;
-$isStonemill = false;
-$isWoodСutter = false;
-$isCastle = false;
+var $isCotteg = false,
+    $isStonemill = false,
+    $isWoodСutter = false,
+    $isCastle = false;
+
+console.log($isCotteg);
+//Если все здания построины заканчываем игру
+/*
+var $trueCotteg = false,
+    $trueCastle = false,
+    $trueWoodСutter = false,
+    $trueStonemill = false;
+*/
 
 //получаем кнопку старт
 $startBtn = document.querySelector('#start__game');
@@ -68,6 +78,7 @@ $startBtn = document.querySelector('#start__game');
 $chestSound.src = "./assets/audio/gold.mp3";
 $treeSound.src = "./assets/audio/tree.mp3";
 $rockSound.src = "./assets/audio/rock.mp3";
+$bgSound.src = "./assets/audio/bgAudio.mp3";
 
 //получаем источник изображения
 $background.src = "./assets/img/bgCanvas.jpg";
@@ -79,3 +90,18 @@ $rockImg.src = "./assets/img/resources/a-rock-1.png";
 $chestImg.src = "./assets/img/resources/chest-1.png";
 $treeImg.src = "./assets/img/resources/tree-2.png";
 $playerImg.src = "./assets/img/player.png";
+
+
+//  Все переменные оставляю сдесь, чтобы потом не потерять их
+// Для общего счета дерева
+var $treeScore = document.querySelector("#tree-score");
+// Для общего счета камня
+var $rockScore = document.querySelector("#rock-score");
+// Для общего счета золота
+var $goldScore = document.querySelector("#gold-score");
+// Для вложения построенных зданий в экран конца игры
+var $buildingScoreBlock = document.querySelector("#building-score-block");
+var $endScore = 0;
+var $endModal = document.querySelector("#end-modal");
+//перезагрузка игры
+var $btnRestart = document.querySelector('#restartButton');

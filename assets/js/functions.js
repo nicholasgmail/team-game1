@@ -44,7 +44,7 @@ function resors(playerX, playerY) {
     // Сбор Каменя
     if (playerX == $rock.x && playerY == $rock.y) {
         // Ресурс собирается разное количество
-        $rockCount = $rockCount + random(4);
+        $rockCount = $rockCount + random(50);
         // Проигрывание трека
         $rockSound.play();
         //отображаем количество камней
@@ -65,7 +65,7 @@ function resors(playerX, playerY) {
     // Сбор дерева
     if (playerX == $tree.x && playerY == $tree.y) {
         // Ресурса собирается разное количество
-        $treeCount = $treeCount + random(4);
+        $treeCount = $treeCount + random(50);
         // Проигрывание трека
         $treeSound.play();
         //отображаем количество деревев
@@ -86,7 +86,7 @@ function resors(playerX, playerY) {
     // Сбор золота
     if (playerX == $chest.x && playerY == $chest.y) {
         // Ресурса собирается разное количество
-        $goldCount = $goldCount + random(4);
+        $goldCount = $goldCount + random(50);
         // Проигрывание трека
         $chestSound.play();
         // Отображаем количество золота
@@ -106,23 +106,23 @@ function resors(playerX, playerY) {
 
 }
 
-//Управление героем
+//Функцыя постройки зданий
 function ishouse(iscotteg, isstonemill, iswood, iscastle) {
     if (iscotteg == true) {
+        //построить здание
         pictures($cottage, 23 * $box, 5 * $box, 182 / 1.5, 167 / 1.5);
-        $isCotteg == false;
     }
     if (isstonemill == true) {
+        //построить здание
         pictures($stonemill, 2 * $box, 2 * $box, 257 / 1.5, 180 / 1.5);
-        $isStonemill == false;
     }
     if (iswood == true) {
+        //построить здание
         pictures($wood_cutter, 17 * $box, 1 * $box, 192 / 1.5, 178 / 1.5);
-        $isWoodСutter == false;
     }
     if (iscastle == true) {
+        //построить здание
         pictures($castle, 29 * $box, 1 * $box, 479 / 2.5, 490 / 2.5);
-        $isCastle == false;
     }
 }
 
@@ -164,6 +164,8 @@ function houseCottage() {
             // Удаляем кнопку построить
             $btnCottage.style.backgroundColor = "#dc3545";
             $btnCottage.style.pointerEvents = "";
+            // Проигрывание трека
+            $treeSound.play();
             //разрешайе постройку
             $isCotteg = true;
             //отнимаем ресурсы
@@ -174,10 +176,8 @@ function houseCottage() {
             rockCount($rockCount);
             treeCount($treeCount);
             goldCount($goldCount);
-            //очищаем счечик
-            clearInterval(gameCoreFunction());
         }
-    }else{
+    } else {
         //блокируем кнопку
         $btnCottage.style.backgroundColor = "#dc3545";
         $btnCottage.style.pointerEvents = "none";
@@ -198,6 +198,8 @@ function houseStonemill() {
             // Удаляем кнопку построить
             $btnStonemill.style.backgroundColor = "#dc3545";
             $btnStonemill.style.pointerEvents = "";
+            // Проигрывание трека
+            $treeSound.play();
             //разрешайе постройку
             $isStonemill = true;
             //отнимаем ресурсы
@@ -209,9 +211,9 @@ function houseStonemill() {
             treeCount($treeCount);
             goldCount($goldCount);
             //очищаем счечик
-            clearInterval(gameCoreFunction());
+            clearInterval();
         }
-    }else{
+    } else {
         $btnStonemill.style.backgroundColor = "#dc3545";
         $btnStonemill.style.pointerEvents = "none";
     }
@@ -231,6 +233,8 @@ function houseWoodСutter() {
             // Удаляем кнопку построить
             $btnWoodCutter.style.pointerEvents = "";
             $btnWoodCutter.style.backgroundColor = "#dc3545";
+            // Проигрывание трека
+            $treeSound.play();
             //разрешайе постройку
             $isWoodСutter = true;
             //отнимаем ресурсы
@@ -244,7 +248,7 @@ function houseWoodСutter() {
             //очищаем счечик
             clearInterval(gameCoreFunction());
         }
-    }else{
+    } else {
         //блокируем кнопку
         $btnWoodCutter.style.backgroundColor = "#dc3545";
         $btnWoodCutter.style.pointerEvents = "none";
@@ -265,6 +269,8 @@ function houseCastle() {
             // Удаляем кнопку построить
             $btnCastle.style.pointerEvents = "";
             $btnCastle.style.backgroundColor = "#dc3545";
+            // Проигрывание трека
+            $treeSound.play();
             //разрешайе постройку
             $isCastle = true;
             //отнимаем ресурсы
@@ -276,9 +282,9 @@ function houseCastle() {
             treeCount($treeCount);
             goldCount($goldCount);
             //очищаем счечик
-            clearInterval(gameCoreFunction());
+            clearInterval();
         }
-    }else{
+    } else {
         //блокируем кнопку
         $btnCastle.style.backgroundColor = "#dc3545";
         $btnCastle.style.pointerEvents = "none";
@@ -300,15 +306,14 @@ function list() {
     }
 }
 
+
+console.dir($playerImg);
+
 //Функцыя игры
 function gameCoreFunction() {
 
     // Рисуем изображение от точки с координатами 0, 0
     pictures($background, 0, 0, 1200, 657);
-
-    for (let $i = 0; $i < $player.length; $i++) {
-        pictures($playerImg, $player[$i].x, $player[$i].y, 159 / 2.5, 312 / 2.5);
-    }
 
     // Старая позиция, которая стирается
     var $playerX = $player[0].x;
@@ -375,6 +380,83 @@ function gameCoreFunction() {
     $liRock.innerHTML = $rockCountSign;
     $liTree.innerHTML = $treeCountSign;
     $liGold.innerHTML = $goldCountSign;
+
+
+
+        endScoreReset();
+
+    for (let $i = 0; $i < $player.length; $i++) {
+        pictures($playerImg, $player[$i].x, $player[$i].y, 159 / 2.5, 312 / 2.5);
+    }
+        //вызов модального окна конца игры
+    if ($isCotteg == true && $isWoodСutter == true && $isStonemill == true && $isCastle == true) {
+        endScreenCreation();
+    }
 };
 
+// Это при начале игры
+// Обнуляет счетчики на экране конца игры
+function endScoreReset() {
+    $treeScore.innerText = $treeCount;
+    $rockScore.innerText = $rockCount;
+    $goldScore.innerText = $goldCount;
+}
+
+// Вставить перед тем как заканчивается игра
+// Проверяет что построил игрок за время игры
+function buildingEndScreen() {
+
+        //создаем блок в модальном окне cottage
+        $buildingScoreSign = document.createElement("p");
+        $buildingScoreSign.className = "building-score-sign";
+        $buildingScoreSignImg = document.createElement("img");
+        $buildingScoreSignImg.src = "./assets/img/cottage_182_167.png";
+        $buildingScoreBlock.appendChild($buildingScoreSign);
+        $buildingScoreSign.innerText = "Хижину ";
+        $buildingScoreSign.appendChild($buildingScoreSignImg);
+
+        //создаем блок в модальном окне wood_cutter
+        $buildingScoreSign = document.createElement("p");
+        $buildingScoreSign.className = "building-score-sign";
+        $buildingScoreSignImg = document.createElement("img");
+        $buildingScoreSignImg.src = "./assets/img/wood_cutter_192_178.png";
+        $buildingScoreBlock.appendChild($buildingScoreSign);
+        $buildingScoreSign.innerText = "Лесопилку ";
+        $buildingScoreSign.appendChild($buildingScoreSignImg);
+
+         //создаем блок в модальном окне stonemill
+        $buildingScoreSign = document.createElement("p");
+        $buildingScoreSign.className = "building-score-sign";
+        $buildingScoreSignImg = document.createElement("img");
+        $buildingScoreSignImg.src = "./assets/img/stonemill_257_180.png";
+        $buildingScoreBlock.appendChild($buildingScoreSign);
+        $buildingScoreSign.innerText = "Каменоломню ";
+        $buildingScoreSign.appendChild($buildingScoreSignImg);
+
+        //создаем блок в модальном окне castle
+        $buildingScoreSign = document.createElement("p");
+        $buildingScoreSign.className = "building-score-sign";
+        $buildingScoreSignImg = document.createElement("img");
+        $buildingScoreSignImg.src = "./assets/img/castle_479_490.png";
+        $buildingScoreBlock.appendChild($buildingScoreSign);
+        $buildingScoreSign.innerText = "Замок ";
+        $buildingScoreSign.appendChild($buildingScoreSignImg);
+
+}
+
+// Это надо вписать в условие конца игры
+// Функция вызывает модальное окно
+
+function endScreenCreation() {
+        $endModal.classList.add("opened");
+        $bgModal.classList.add('active');
+        clearInterval(interval);
+        clearInterval($game);
+        body.style.overflow = 'hidden'
+}
+
+//Функцыя перезагрузки игры
+function reload() {
+    location.reload();
+}
 

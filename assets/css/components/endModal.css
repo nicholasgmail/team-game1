@@ -1,0 +1,83 @@
+
+#end-modal {
+	display: none;
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
+    background: url(../../img/endGameBg.png) no-repeat center / cover;
+    width: 900px;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10%;
+	z-index: 1050;
+}	
+
+#end-modal.opened {
+	display: flex;
+}	
+
+#game-over-sign {
+	font-size: 60px;
+	color: #C32054;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#final-resources-block {
+	position: absolute;
+	left: 5%;
+	top: 19%;
+}
+
+#final-resources-sign, #final-building-sign {
+	font-size: 38px;
+	color: #C32054;
+}
+
+#resources-score-block p, #building-score-block p {
+	color: #C32054;
+	font-size: 30px;	
+}
+
+#building-score-signs-block {
+	position: absolute;
+	left: 65%;
+	top: 19%;	
+}
+
+#building-score-block img {
+	width: 60px;
+	height: 50px;
+}
+
+#restartButton {
+	width: 300px;
+	height: 100px;
+	font-size: 60px;
+	font-weight: bold;
+	text-shadow: black 0px 8px 8px;
+	color: #C32054;
+	background: transparent;
+	position: absolute;
+	top: 77%;
+	left: 32%;
+	border: none;
+    cursor: pointer;
+    outline: 0;
+    transition: all 0.1s ease;
+
+}
+
+#restartButton:hover {
+	text-shadow: #4109E3 0px 8px 8px;
+	color: #BEAFAF;
+}
+
+#restartButton:active {
+	transform: translateY(4px);
+	text-shadow: #4109E3 0px 4px 4px;
+	color: #BEAFAF;
+}

@@ -9,6 +9,7 @@ function modalOpen() {
         $modalOpev.style.display = 'block';
         $modalOpev.classList.add('active');
         $bgModal.classList.add('active');
+        body.style.overflow = 'hidden'
     })
     /*}
 })*/

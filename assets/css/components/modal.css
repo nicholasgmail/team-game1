@@ -417,7 +417,6 @@
 #modal-bg.active {
     opacity: 1;
     transition: all .5s;
-    pointer-events: all;
 }
 
 /*
